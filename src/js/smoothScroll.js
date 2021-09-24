@@ -1,6 +1,8 @@
+import toggleMenu from './burger.js'
+
 let linksHeader = document.querySelectorAll('.menu-list__link')
 const mainScroll = document.querySelectorAll('.main__scroll')
-const newArray = [...linksHeader, mainScroll] //spread operator for joining 2 arrays
+let newArray = [...linksHeader, mainScroll] //spread operator for joining 2 arrays
 
 newArray.forEach((link) => {
   link.addEventListener('click', (event) => {
@@ -11,6 +13,7 @@ newArray.forEach((link) => {
       behavior: 'smooth', //Lazy scroll
       block: 'start' //scroll to start of section
     });
+
+    toggleMenu()
   });
 });
-
